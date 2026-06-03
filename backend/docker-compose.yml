@@ -1,0 +1,10 @@
+services:
+  backend:
+    build: .
+    container_name: jwt-backend-api
+    ports:
+      - "8000:8000"
+    environment:
+      JWT_SECRET_KEY: super-secret-key-change-me
+      JWT_VALID_USERNAME: admin
+      JWT_VALID_PASSWORD: admin123
