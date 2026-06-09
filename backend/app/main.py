@@ -3,6 +3,7 @@ import os
 
 import jwt
 from fastapi import FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 ACCESS_TOKEN_EXPIRE_SECONDS = 300
@@ -12,7 +13,20 @@ SECRET_KEY = os.getenv("JWT_SECRET_KEY", "development-secret-key")
 VALID_USERNAME = os.getenv("JWT_VALID_USERNAME", "admin")
 VALID_PASSWORD = os.getenv("JWT_VALID_PASSWORD", "admin123")
 
+CORS_ORIGINS = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:5173,http://localhost:4173,http://localhost:3000",
+).split(",")
+
 app = FastAPI(title="JWT Backend API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=CORS_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class LoginRequest(BaseModel):

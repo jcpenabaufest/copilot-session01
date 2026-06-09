@@ -1,0 +1,220 @@
+/* Welcome page — Design.md dark theme */
+
+.page {
+  min-height: 100vh;
+  background-color: var(--color-canvas);
+  display: flex;
+  flex-direction: column;
+}
+
+/* nav-bar component from Design.md */
+.nav {
+  height: 64px;
+  background-color: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-xxl);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navLogo {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.2px;
+}
+
+/* ghost button from Design.md */
+.navLogout {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--rounded-md);
+  padding: 8px var(--spacing-lg);
+  height: 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.navLogout:hover {
+  background-color: var(--color-surface-card);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-section) var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Atmospheric glow — green accent for success/welcome */
+.glow {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse at center top, var(--color-accent-green-glow) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 560px;
+  width: 100%;
+}
+
+/* badge-pill component from Design.md */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: var(--color-surface-elevated);
+  color: var(--color-body);
+  border-radius: var(--rounded-full);
+  padding: 4px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-xl);
+}
+
+.badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-accent-green);
+  flex-shrink: 0;
+}
+
+/* display-xl heading */
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -2.8px;
+  color: var(--color-ink);
+  margin-bottom: var(--spacing-xl);
+}
+
+.body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-body);
+  margin-bottom: var(--spacing-xxxl);
+}
+
+/* feature-card-bordered from Design.md */
+.card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  text-align: left;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.cardRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) 0;
+}
+
+.cardLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-mute);
+}
+
+.cardValue {
+  font-size: 14px;
+  color: var(--color-ink);
+  font-weight: 400;
+}
+
+.cardStatus {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 14px;
+  color: var(--color-accent-green);
+  font-weight: 500;
+}
+
+/* status-dot component from Design.md */
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-accent-green);
+  flex-shrink: 0;
+}
+
+.cardToken {
+  font-family: 'Geist Mono', 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--color-charcoal);
+  background-color: var(--color-surface-deep);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--rounded-xs);
+  padding: 2px 8px;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-hairline);
+}
+
+/* button-primary from Design.md */
+.logoutButton {
+  background-color: var(--color-primary);
+  color: var(--color-primary-on);
+  border: none;
+  border-radius: var(--rounded-md);
+  padding: 8px var(--spacing-xl);
+  height: 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.logoutButton:hover {
+  background-color: var(--color-surface-light);
+}
+
+@media (max-width: 425px) {
+  .heading {
+    font-size: 44px;
+    letter-spacing: -1px;
+  }
+
+  .nav {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .main {
+    padding: 64px var(--spacing-lg);
+  }
+}

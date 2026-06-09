@@ -1,0 +1,157 @@
+/* Login page — Design.md dark theme */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-canvas);
+  padding: var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Atmospheric glow anchored to top */
+.glow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center top, var(--color-accent-blue-glow) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Feature card */
+.card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  width: 100%;
+  max-width: 400px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.logo {
+  display: inline-block;
+  font-size: 24px;
+  color: var(--color-accent-blue);
+  margin-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  color: var(--color-ink);
+  margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-charcoal);
+  line-height: 1.43;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.43;
+}
+
+/* text-input component from Design.md */
+.input {
+  background-color: var(--color-surface-card);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--rounded-md);
+  padding: 10px 14px;
+  height: 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input::placeholder {
+  color: var(--color-stone);
+}
+
+.input:focus {
+  border-color: var(--color-ink);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  background-color: rgba(255, 32, 71, 0.1);
+  border: 1px solid rgba(255, 32, 71, 0.3);
+  border-radius: var(--rounded-md);
+  color: var(--color-accent-red);
+  font-size: 14px;
+  padding: 10px 14px;
+  line-height: 1.43;
+}
+
+/* button-primary from Design.md */
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-primary-on);
+  border: none;
+  border-radius: var(--rounded-md);
+  padding: 8px var(--spacing-lg);
+  height: 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  cursor: pointer;
+  width: 100%;
+  margin-top: var(--spacing-sm);
+  transition: background-color 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--color-surface-light);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 425px) {
+  .card {
+    padding: var(--spacing-xl);
+  }
+}
